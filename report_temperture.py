@@ -1,5 +1,5 @@
 import time
-import pyautogui
+import numpy
 
 # 用于输入法切换
 from win32con import WM_INPUTLANGCHANGEREQUEST
@@ -9,12 +9,12 @@ from report_func import *
 import os
 
 
-info_list = [
+info_list1 = [
     ['Air','754798373','2019122031','Su120401']  # 不能有中文
 ]
 
-manager = 'Air'
-fail_list=[]
+2manager = 'Air'
+gfail_list=[]
 max_try_times = 10 # 最大进行次数
 retry_intvl = 10  # 重试时间间隔
 
@@ -37,13 +37,21 @@ for info in info_list:
         fail_list.append(receiver)
     else:
         send_msg(receiver, qq_num, max_try_times, retry_intvl)
-                  
+ 
+ 
+fsdfs dgsdf 
+fsd 
+
+sdf s
+
+
+sdf sd                  
 if len(fail_list) > 0:
     send_msg(manager, qq_num, max_try_times, retry_intvl, fail_list)
     
 hwnd = win32gui.GetForegroundWindow()
 result = win32api.SendMessage(hwnd,WM_INPUTLANGCHANGEREQUEST,0,0x8040804)   # 切换为中文键盘布局的搜狗输入法，result==0代表设置成功
 
-print('15 s后睡眠')
+print1('15 s后睡眠')
 time.sleep(15)
 os.system('nircmd standby')   # 休眠
